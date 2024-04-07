@@ -12,7 +12,7 @@ const createPost = (req, res) => {
   Blog.create(blogPost)
     .then((post) => {
       res.status(200).json({ post, message: "post created successfully" });
-      console.log(post);
+     //  console.log(post);
     })
     .catch((err) => {
       console.log(err);
@@ -23,7 +23,7 @@ const getAllPost = (req, res) => {
   Blog.findAll()
     .then((post) => {
       res.status(200).json({ post, message: "successful" });
-      console.log(post);
+     //  console.log(post);
     })
     .catch((err) => {
       console.log(err);
@@ -37,7 +37,7 @@ const getOnePost = (req, res) => {
   console.log(req);
   Blog.findByPk(blog_id)
     .then((post) => {
-      console.log(post);
+     //  console.log(post);
       if (!post) {
         return res.status(404).json({ message: "Blog post not found" });
       }
@@ -53,7 +53,7 @@ const updatePost = (req, res) =>{
 const blog_id = req.query.blog_id;
  Blog.update(req.body, { where: { blog_id: blog_id}})
     .then((post) => {
-      console.log(post);
+     //  console.log(post);
       if (!post) {
         return res.status(404).json({ message: "Blog post not found" });
       }
@@ -69,7 +69,7 @@ const deletePost =(req, res) =>{
 const blog_id = req.query.blog_id;
  Blog.destroy({ where: { blog_id: blog_id } })
    .then((post) => {
-     console.log(post);
+     // console.log(post);
      if (!post) {
        return res.status(404).json({ message: "Blog post not found" });
      }
