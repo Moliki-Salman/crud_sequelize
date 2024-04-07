@@ -12,7 +12,7 @@ const createPost = (req, res) => {
   Blog.create(blogPost)
     .then((post) => {
       res.status(200).json({ post, message: "post created successfully" });
-     //  console.log(post);
+      console.log(post);
     })
     .catch((err) => {
       console.log(err);
